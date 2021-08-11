@@ -1,0 +1,11 @@
+1 - criar arquivo de config jest.config.jest
+
+module.exports = {
+    testPathIgnorePatterns:["/node_modules/","/.next/"], <==ignora esses arquivos para nao serem feitos testes neles
+    setupFilesAfterEnv:["<rootDir>/src/tests/setupTests.ts"], <== essa config fala que esse arquivo deverá rodar antes dos testes serem feitos.
+    transform:{ <== config para o babel rodar todos os arquivos com essas extensoes. O Jest só entende JS.
+        "^.+\\.(js|jsx|ts|tsx)$":"<rootDir>/node_modules/babel-jest"
+    }
+}
+
+tem que criar um arquivo babel.config.js no root por causa do babel estar sento utilizado pelo teste
